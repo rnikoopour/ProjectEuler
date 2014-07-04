@@ -1,21 +1,25 @@
 def main():
-    starting_num = 1
-    ending_num = 1000
-    nums = range(starting_num, ending_num)
-    multiples = []
+    i_minus_2_num = 1
+    i_minus_1_num = 2
     
-    for num in nums:
-        if num not in multiples:
-            if ((num % 3) == 0) or ((num % 5) == 0): multiples.append(num)
-     
-    print "Sum of all the multiples of 3 and 5 between " \
-            + str(starting_num) \
-            + " and " \
-            + str(ending_num) \
-            + " is " \
-            + str(sum(multiples))
-            
+    evens = []
+    fibonacci = [1,2]
+    
+    while True:
+        if (i_minus_1_num % 2) == 0: evens.append(i_minus_1_num)
+
         
+
+        next_fibonacci_num = i_minus_2_num + i_minus_1_num
+        if next_fibonacci_num >= 4000000:
+            break
+        else:
+            i_minus_2_num = i_minus_1_num
+            i_minus_1_num = next_fibonacci_num
+        
+    print "The sum of all even fibonacci numbers between 1 and 3999999 is " \
+            + str(sum(evens))
+    
         
 if __name__ == '__main__':
     main()
